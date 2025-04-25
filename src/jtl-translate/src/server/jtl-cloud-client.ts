@@ -1,17 +1,20 @@
-import { importJWK, JWK, jwtVerify } from "jose";
+import { importJWK, JWK, jwtVerify } from 'jose';
 
 /**
  * Shape of the oauth2 token response
  */
-type JtlAuthResponse = {
-  access_token: string;
-  expires_in: number;
-  scope: string;
-  token_type: string;
-} | {
-  error: string;
-  error_description: string;
-} | void;
+type JtlAuthResponse =
+  | {
+      access_token: string;
+      expires_in: number;
+      scope: string;
+      token_type: string;
+    }
+  | {
+      error: string;
+      error_description: string;
+    }
+  | void;
 
 /**
  * Authentication token details
@@ -19,7 +22,7 @@ type JtlAuthResponse = {
 type AuthToken = {
   token: string;
   expiresAt: number;
-}
+};
 
 /**
  * Options for fetching data from the API
@@ -31,20 +34,17 @@ export type FetchOptions = {
   data?: Record<string, string | number | boolean>;
   authToken?: string;
   tenantId?: string;
-}
+};
 
 /**
  * An error that is thrown when authentication fails
  */
-export class AuthenticationError extends Error {};
-
+export class AuthenticationError extends Error {}
 
 /**
  * Provides authentication and interaction with the Cloud ERP
  */
 class JtlCloudClient {
-
-
   /**
    * Caches the auth token request in memory so we do not have to request it again and again.
    */
@@ -54,7 +54,6 @@ class JtlCloudClient {
    * Fetches data from the API
    */
   async fetch<ResponseType>(opts: FetchOptions): Promise<ResponseType> {
-
     // Get the tenant id
     const tenantId = opts.tenantId;
 
@@ -71,27 +70,25 @@ class JtlCloudClient {
 
     // Send the request
     const headers = {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
-      ...(tenantId ? { 'X-Tenant-Id': tenantId } : {})
-      ,
+      ...(tenantId ? { 'X-Tenant-Id': tenantId } : {}),
     };
     const res = await fetch(url.toString(), {
       method: opts?.method ?? 'GET',
       headers: headers,
       body: typeof opts?.data !== 'undefined' ? JSON.stringify(opts.data) : undefined,
-      signal: AbortSignal.timeout(10000)
+      signal: AbortSignal.timeout(10000),
     });
     const data = await res.json().catch(() => null);
     if (!res.ok) {
       console.error(`JTL Wawi request failed:`);
       console.error(`Response: ${JSON.stringify(data, null, 2)}`);
-      console.error(`Options: ${JSON.stringify(opts, null, 2)}`)
+      console.error(`Options: ${JSON.stringify(opts, null, 2)}`);
       console.error(`Headers: ${JSON.stringify(headers, null, 2)}`);
       throw new Error(`JTL Wawi request failed with status code ${res.status}: ${JSON.stringify(data)}`);
     }
     return data;
-
   }
 
   /**
@@ -99,7 +96,6 @@ class JtlCloudClient {
    * This token can be used to query the Cloud ERP API
    */
   async getAuthToken(): Promise<AuthToken> {
-
     // Provide existing token, but only if the promise did not produce an error
     // and if the token is not yet expired
     if (this.authTokenPromise) {
@@ -112,7 +108,6 @@ class JtlCloudClient {
     // Create a promise that resolves once we have received the new token
     // note that we cache the promise and not the token to avoid race conditions
     this.authTokenPromise = (async () => {
-
       // Get authentication config from environment
       const authUrl = process.env.JTL_AUTH_BASE_URL;
       const clientId = process.env.JTL_AUTH_CLIENT_ID;
@@ -132,42 +127,38 @@ class JtlCloudClient {
         }),
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': `Basic ${btoa(clientId + ':' + clientSecret)}`
+          Authorization: `Basic ${btoa(clientId + ':' + clientSecret)}`,
         },
-        signal: AbortSignal.timeout(10000)
-      }).catch((err) => {
+        signal: AbortSignal.timeout(10000),
+      }).catch(err => {
         throw new AuthenticationError(`Authentication Failed: ${err?.message || err || 'Unknown error'}`);
       });
-      const data = await res.json() as JtlAuthResponse;
+      const data = (await res.json()) as JtlAuthResponse;
 
       // Authentication failure
       if (!res.ok || !data || 'access_token' in data === false) {
-        throw new AuthenticationError(`Authentication Failed: ${data && 'error' in data ? data.error : 'Unknown Reason'}`)
+        throw new AuthenticationError(`Authentication Failed: ${data && 'error' in data ? data.error : 'Unknown Reason'}`);
       }
 
       // Extract the token and resolve it
       const token: AuthToken = {
         token: data.access_token,
-        expiresAt: Date.now() + (data.expires_in * 1000)
+        expiresAt: Date.now() + data.expires_in * 1000,
       };
       return token;
-
     })();
 
     return this.authTokenPromise;
-
   }
 
   /**
    * Verifies the session token and extract the JTL Tenant ID and User ID from it
    */
   async getTenantInfo(sessionToken: string) {
-
     try {
-
       // Fetch public keys
       const jwks = await this.fetch<{ keys: JWK[] }>({
-        path: '/account/.well-known/jwks.json'
+        path: '/account/.well-known/jwks.json',
       });
 
       // Extract the payload from the session token
@@ -178,17 +169,13 @@ class JtlCloudClient {
       if (!payload?.tenantId || !payload?.userId) throw new Error('Invalid payload');
       return {
         tenantId: payload.tenantId as string,
-        userId: payload.userId as string
+        userId: payload.userId as string,
       };
-
     } catch (err) {
-
       // Log the actual error and then rethrow with a more general one
       console.warn(`Failed to validate session token:`, err);
       throw new Error('Failed to validate session token');
-
     }
-
   }
 
   /**
@@ -199,12 +186,11 @@ class JtlCloudClient {
       Version: string;
       Timestamp: string;
       Tenant: string;
-      Type: string
+      Type: string;
     }>({
-      path: '/erp/info'
+      path: '/erp/info',
     });
   }
-
 }
 
 const client = new JtlCloudClient();

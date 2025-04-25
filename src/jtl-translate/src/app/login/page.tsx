@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { LoginForm } from "@/components";
-import { AuthProvider } from "@/hooks/useAuth";
-import { Card } from "@jtl/platform-ui-react";
+import { LoginForm } from '@/components';
+import { AuthProvider } from '@/hooks/useAuth';
+import { Card } from '@jtl/platform-ui-react';
 
 export default function LoginPage() {
   return (
@@ -15,5 +15,5 @@ export default function LoginPage() {
         </div>
       </div>
     </AuthProvider>
-  )
+  );
 }

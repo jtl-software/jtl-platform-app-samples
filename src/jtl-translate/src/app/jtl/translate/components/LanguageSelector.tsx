@@ -1,5 +1,5 @@
-import { Language } from "../types";
-import { Select } from "@jtl/platform-ui-react";
+import { Language } from '../types';
+import { Select } from '@jtl/platform-ui-react';
 
 interface LanguageSelectorProps {
   languages: Language[];
@@ -8,7 +8,6 @@ interface LanguageSelectorProps {
 }
 
 export default function LanguageSelector({ languages, value, onChange }: LanguageSelectorProps) {
-
   const handleValueChange = (iso: string) => {
     const selectedLanguage = languages.find(lang => lang.iso === iso);
     if (selectedLanguage && onChange) {
@@ -16,11 +15,5 @@ export default function LanguageSelector({ languages, value, onChange }: Languag
     }
   };
 
-  return (
-    <Select
-      options={languages.map((l) => ({ label: l.label, value: l.iso }))}
-      value={value?.iso}
-      onValueChange={handleValueChange}
-    ></Select>
-  );
+  return <Select options={languages.map(l => ({ label: l.label, value: l.iso }))} value={value?.iso} onValueChange={handleValueChange}></Select>;
 }

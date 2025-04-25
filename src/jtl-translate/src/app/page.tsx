@@ -1,5 +1,5 @@
-import Image from "next/image"
-import { Globe, BarChart, Zap, ShoppingCart, CheckCircle, ArrowRight } from "lucide-react"
+import Image from 'next/image';
+import { Globe, BarChart, Zap, ShoppingCart, CheckCircle, ArrowRight } from 'lucide-react';
 
 /**
  * Homepage
@@ -24,12 +24,10 @@ export default function HomePage() {
             <div className="grid gap-8 lg:grid-cols-[1fr_400px] lg:gap-16 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-6">
                 <div className="space-y-4">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Translate Your JTL Products With Ease
-                  </h1>
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Translate Your JTL Products With Ease</h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Expand your e-commerce reach globally with JTL Translate. Seamlessly translate product descriptions,
-                    titles, and attributes into multiple languages directly within your JTL ERP system.
+                    Expand your e-commerce reach globally with JTL Translate. Seamlessly translate product descriptions, titles, and attributes into
+                    multiple languages directly within your JTL ERP system.
                   </p>
                 </div>
               </div>
@@ -55,7 +53,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 items-center justify-center pt-6">
-                {[1, 2, 3, 4, 5].map((i) => (
+                {[1, 2, 3, 4, 5].map(i => (
                   <div key={i} className="flex items-center justify-center">
                     <Image
                       src="https://placehold.co/120x60.svg"
@@ -76,12 +74,9 @@ export default function HomePage() {
           <div className="container mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
             <div className="flex flex-col items-center justify-center space-y-6 text-center">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
-                  Everything You Need for Global Expansion
-                </h2>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Everything You Need for Global Expansion</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                  JTL Translate seamlessly integrates with your JTL ERP system to provide powerful translation
-                  capabilities
+                  JTL Translate seamlessly integrates with your JTL ERP system to provide powerful translation capabilities
                 </p>
               </div>
             </div>
@@ -89,33 +84,33 @@ export default function HomePage() {
               {[
                 {
                   icon: <Globe className="h-10 w-10 text-primary" />,
-                  title: "Multi-language Support",
-                  description: "Translate your products into 40+ languages with just a few clicks",
+                  title: 'Multi-language Support',
+                  description: 'Translate your products into 40+ languages with just a few clicks',
                 },
                 {
                   icon: <Zap className="h-10 w-10 text-primary" />,
-                  title: "One-Click Translation",
-                  description: "Automatically translate all product fields with a single click",
+                  title: 'One-Click Translation',
+                  description: 'Automatically translate all product fields with a single click',
                 },
                 {
                   icon: <BarChart className="h-10 w-10 text-primary" />,
-                  title: "Translation Analytics",
-                  description: "Track translation quality and performance across languages",
+                  title: 'Translation Analytics',
+                  description: 'Track translation quality and performance across languages',
                 },
                 {
                   icon: <ShoppingCart className="h-10 w-10 text-primary" />,
-                  title: "JTL Integration",
-                  description: "Seamlessly works within your existing JTL ERP workflow",
+                  title: 'JTL Integration',
+                  description: 'Seamlessly works within your existing JTL ERP workflow',
                 },
                 {
                   icon: <CheckCircle className="h-10 w-10 text-primary" />,
-                  title: "Human Review",
-                  description: "Optional human review process for critical translations",
+                  title: 'Human Review',
+                  description: 'Optional human review process for critical translations',
                 },
                 {
                   icon: <ArrowRight className="h-10 w-10 text-primary" />,
-                  title: "Bulk Processing",
-                  description: "Translate thousands of products simultaneously",
+                  title: 'Bulk Processing',
+                  description: 'Translate thousands of products simultaneously',
                 },
               ].map((feature, i) => (
                 <div key={i} className="flex flex-col items-center space-y-4 rounded-lg border p-8 shadow-sm">
@@ -133,12 +128,8 @@ export default function HomePage() {
           <div className="container mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
             <div className="flex flex-col items-center justify-center space-y-6 text-center">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
-                  Simple Integration, Powerful Results
-                </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                  Get up and running with JTL Translate in minutes, not days
-                </p>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Simple Integration, Powerful Results</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl">Get up and running with JTL Translate in minutes, not days</p>
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-10 py-12 lg:grid-cols-2">
@@ -152,24 +143,24 @@ export default function HomePage() {
               <div className="space-y-10">
                 {[
                   {
-                    number: "01",
-                    title: "Install the Plugin",
-                    description: "Add JTL Translate to your JTL ERP system with our simple installation wizard",
+                    number: '01',
+                    title: 'Install the Plugin',
+                    description: 'Add JTL Translate to your JTL ERP system with our simple installation wizard',
                   },
                   {
-                    number: "02",
-                    title: "Select Products",
-                    description: "Choose which products and fields you want to translate",
+                    number: '02',
+                    title: 'Select Products',
+                    description: 'Choose which products and fields you want to translate',
                   },
                   {
-                    number: "03",
-                    title: "Choose Languages",
-                    description: "Select your target languages from our extensive list",
+                    number: '03',
+                    title: 'Choose Languages',
+                    description: 'Select your target languages from our extensive list',
                   },
                   {
-                    number: "04",
-                    title: "Translate & Review",
-                    description: "Automatically translate content and optionally review before publishing",
+                    number: '04',
+                    title: 'Translate & Review',
+                    description: 'Automatically translate content and optionally review before publishing',
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex gap-6">
@@ -193,54 +184,41 @@ export default function HomePage() {
             <div className="flex flex-col items-center justify-center space-y-6 text-center">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Simple, Transparent Pricing</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                  Choose the plan that fits your business needs
-                </p>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl">Choose the plan that fits your business needs</p>
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl gap-8 py-12 lg:grid-cols-3">
               {[
                 {
-                  name: "Starter",
-                  price: "€49",
-                  description: "Perfect for small stores just getting started with international sales",
-                  features: ["Up to 500 products", "5 languages", "Basic support", "Monthly updates"],
+                  name: 'Starter',
+                  price: '€49',
+                  description: 'Perfect for small stores just getting started with international sales',
+                  features: ['Up to 500 products', '5 languages', 'Basic support', 'Monthly updates'],
                   popular: false,
                 },
                 {
-                  name: "Professional",
-                  price: "€99",
-                  description: "Ideal for growing businesses expanding to multiple markets",
-                  features: [
-                    "Up to 2,000 products",
-                    "15 languages",
-                    "Priority support",
-                    "Weekly updates",
-                    "Human review credits",
-                  ],
+                  name: 'Professional',
+                  price: '€99',
+                  description: 'Ideal for growing businesses expanding to multiple markets',
+                  features: ['Up to 2,000 products', '15 languages', 'Priority support', 'Weekly updates', 'Human review credits'],
                   popular: true,
                 },
                 {
-                  name: "Enterprise",
-                  price: "Custom",
-                  description: "For large retailers with complex translation needs",
+                  name: 'Enterprise',
+                  price: 'Custom',
+                  description: 'For large retailers with complex translation needs',
                   features: [
-                    "Unlimited products",
-                    "All languages",
-                    "24/7 dedicated support",
-                    "Daily updates",
-                    "Custom integrations",
-                    "Dedicated account manager",
+                    'Unlimited products',
+                    'All languages',
+                    '24/7 dedicated support',
+                    'Daily updates',
+                    'Custom integrations',
+                    'Dedicated account manager',
                   ],
                   popular: false,
                 },
               ].map((plan, i) => (
-                <div
-                  key={i}
-                  className={`flex flex-col rounded-lg border p-8 shadow-sm ${
-                    plan.popular ? "border-primary ring-1 ring-primary" : ""
-                  }`}
-                >
+                <div key={i} className={`flex flex-col rounded-lg border p-8 shadow-sm ${plan.popular ? 'border-primary ring-1 ring-primary' : ''}`}>
                   {plan.popular && (
                     <div className="absolute -top-4 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-3 py-1 text-xs text-primary-foreground">
                       Most Popular
@@ -250,7 +228,7 @@ export default function HomePage() {
                     <h3 className="text-2xl font-bold">{plan.name}</h3>
                     <div className="flex items-baseline gap-1">
                       <span className="text-3xl font-bold">{plan.price}</span>
-                      {plan.price !== "Custom" && <span className="text-muted-foreground">/month</span>}
+                      {plan.price !== 'Custom' && <span className="text-muted-foreground">/month</span>}
                     </div>
                     <p className="text-sm text-muted-foreground">{plan.description}</p>
                   </div>
@@ -274,30 +252,25 @@ export default function HomePage() {
             <div className="flex flex-col items-center justify-center space-y-6 text-center">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">What Our Customers Say</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                  Hear from businesses that have expanded globally with JTL Translate
-                </p>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl">Hear from businesses that have expanded globally with JTL Translate</p>
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
               {[
                 {
-                  quote:
-                    "JTL Translate helped us expand to 5 new European markets in just 3 months. The translation quality is excellent.",
-                  author: "Maria Schmidt",
-                  company: "FashionPlus GmbH",
+                  quote: 'JTL Translate helped us expand to 5 new European markets in just 3 months. The translation quality is excellent.',
+                  author: 'Maria Schmidt',
+                  company: 'FashionPlus GmbH',
                 },
                 {
-                  quote:
-                    "The integration with our JTL system was seamless. We're now selling in 12 countries with minimal effort.",
-                  author: "Thomas Weber",
-                  company: "ElectroTech",
+                  quote: "The integration with our JTL system was seamless. We're now selling in 12 countries with minimal effort.",
+                  author: 'Thomas Weber',
+                  company: 'ElectroTech',
                 },
                 {
-                  quote:
-                    "The ROI on JTL Translate has been incredible. Our international sales increased by 240% in the first year.",
-                  author: "Laura Müller",
-                  company: "HomeGoods Direct",
+                  quote: 'The ROI on JTL Translate has been incredible. Our international sales increased by 240% in the first year.',
+                  author: 'Laura Müller',
+                  company: 'HomeGoods Direct',
                 },
               ].map((testimonial, i) => (
                 <div key={i} className="flex flex-col rounded-lg border bg-background p-8 shadow-sm">
@@ -305,13 +278,7 @@ export default function HomePage() {
                     <p className="text-muted-foreground">{testimonial.quote}</p>
                   </div>
                   <div className="mt-8 flex items-center gap-4">
-                    <Image
-                      src="https://placehold.co/60x60.svg"
-                      alt={testimonial.author}
-                      width={60}
-                      height={60}
-                      className="rounded-full"
-                    />
+                    <Image src="https://placehold.co/60x60.svg" alt={testimonial.author} width={60} height={60} className="rounded-full" />
                     <div>
                       <p className="font-medium">{testimonial.author}</p>
                       <p className="text-sm text-muted-foreground">{testimonial.company}</p>
@@ -354,5 +321,5 @@ export default function HomePage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { IThemeProviderProps, ThemeProvider as PlatformThemeProvider } from "@jtl/platform-ui-react";
+import { useState, useEffect } from 'react';
+import { IThemeProviderProps, ThemeProvider as PlatformThemeProvider } from '@jtl/platform-ui-react';
 
 /**
  * A wrapper for the theme provider that only uses it when rendered on the client

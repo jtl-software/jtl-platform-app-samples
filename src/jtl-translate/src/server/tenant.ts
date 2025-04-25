@@ -1,4 +1,4 @@
-import { getDatabase } from "./db";
+import { getDatabase } from './db';
 
 // Get access to the tenant database
 const db = getDatabase('jtl-tenants');

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useEffect, useState, useCallback, createContext, useContext } from "react";
+import { useEffect, useState, useCallback, createContext, useContext } from 'react';
 
 /**
  * Holds information about logged in user.
  */
 export type User = {
   email: string;
-}
+};
 
 /**
  * Holds information about the authentication state.
@@ -17,7 +17,7 @@ type AuthState = {
   tenantId: string | null;
   loading: boolean;
   refresh: () => Promise<void>;
-}
+};
 
 // Create context for sharing auth state between hooks
 const AuthContext = createContext<AuthState | null>(null);
@@ -37,7 +37,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       const res = await fetch('/api/auth/session', {
         method: 'POST',
-        credentials: 'include'
+        credentials: 'include',
       });
 
       const data = await res.json();
@@ -50,7 +50,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     } catch (err) {
       if (err instanceof DOMException && err.name === 'AbortError') return;
-      console.error("Session fetching error:", err);
+      console.error('Session fetching error:', err);
       setUser(null);
       setTenantId(null);
     } finally {
@@ -72,7 +72,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 export function useAuth() {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error("useAuth must be used within an AuthProvider");
+    throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
 }

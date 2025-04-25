@@ -1,5 +1,5 @@
-import { getAuthenticatedUser } from "@/server/auth";
-import { getTenantId } from "@/server/tenant";
+import { getAuthenticatedUser } from '@/server/auth';
+import { getTenantId } from '@/server/tenant';
 
 /**
  * Verifies if the user is authenticated by checking the JWT token cookie
@@ -10,6 +10,6 @@ export async function POST() {
   return Response.json({
     authenticated: !!user,
     user,
-    tenantId
+    tenantId,
   });
 }

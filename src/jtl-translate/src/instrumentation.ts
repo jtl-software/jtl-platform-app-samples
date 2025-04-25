@@ -4,7 +4,6 @@
  * https://nextjs.org/docs/app/building-your-application/optimizing/instrumentation
  */
 export async function register() {
-
   // only enable the ngrok proxy in dev mode
   if (process.env.NODE_ENV !== 'development') return;
 
@@ -20,14 +19,13 @@ export async function register() {
       const ngrok = await forward({
         addr: port,
         authtoken: authToken,
-        domain: domain
+        domain: domain,
       });
       console.info(` ✓ Public URL (ngrok): ${ngrok.url()}`);
     } catch (ex) {
       console.info(` ✗ Public URL (ngrok): Failed to forward connection: ${ex}`);
     }
   } else {
-    console.info(` ✗ Public URL (ngrok): Not configured. Check the ngrok section in the .env file to expose the dev server to the internet`)
+    console.info(` ✗ Public URL (ngrok): Not configured. Check the ngrok section in the .env file to expose the dev server to the internet`);
   }
-
 }

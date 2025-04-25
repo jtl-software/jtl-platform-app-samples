@@ -1,12 +1,11 @@
-import { join } from "node:path";
-import { readFile, writeFile, stat, mkdir } from "node:fs/promises";
+import { join } from 'node:path';
+import { readFile, writeFile, stat, mkdir } from 'node:fs/promises';
 
 /**
  * Path to the file where we will persist our data
  */
 
 class Database {
-  
   dataFileDir = join(process.cwd(), 'data');
   dataFilePath: string;
 
@@ -59,7 +58,6 @@ class Database {
     db[key] = value;
     await this.writeDatabase(db);
   }
-
 }
 
 /**
