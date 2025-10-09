@@ -25,13 +25,6 @@ jobs:
         working-directory: src/hello-world-app
         run: yarn build
 
-      - name: Test Hello World App and create coverage report
+      - name: Test Hello World App
         working-directory: src/hello-world-app
-        run: yarn coverage
-
-      - name: Report Hello World App Coverage
-        uses: davelosert/vitest-coverage-report-action@v2
-        with:
-          name: Hello World App Coverage Report
-          working-directory: src/hello-world-app
-          vite-config-path: vite.config.ts
+        run: yarn test
