@@ -22,8 +22,8 @@ This is a mono-repo, both backend and frontend is expected to start from one mac
 
 These are the environment variables that have to be added in the `packages/backend` for the project to start.
 
-| Name              | Description                                       | Type       |
-| ----------------- | ------------------------------------------------- | ---------- |
-| `CLIENT_ID`       | The ClientID of the Sample App                    | `Variable` |
-| `CLIENT_SECRET`   | The Client Scret of the Sample App                | `Secret`   |
-| `API_ENVIRONMENT` | The enviroment of the API (defaults to production)| `Variable` |
+| Name              | Description                                        | Type       |
+| ----------------- | -------------------------------------------------- | ---------- |
+| `CLIENT_ID`       | The ClientID of the Sample App                     | `Variable` |
+| `CLIENT_SECRET`   | The Client Scret of the Sample App                 | `Secret`   |
+| `API_ENVIRONMENT` | The enviroment of the API (defaults to production) | `Variable` |
