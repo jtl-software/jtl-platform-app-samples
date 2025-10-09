@@ -30,11 +30,3 @@ Welcome to the official sample repository for **JTL-Cloud Apps**! This repositor
 | Example         | Description                                      | Location               |
 | --------------- | ------------------------------------------------ | ---------------------- |
 | Hello World App | Full-stack application with backend and frontend | `src/hello-world-app/` |
-
-## 🔌 Ports
-
-To prevent conflicts with other services during development, we have a reserved port range for this project: `50190-50199`. Please use a port within this range when adding a new service.
-
-| Port  | Protocol | Service  |
-| ----- | -------- | -------- |
-| 50190 | HTTP     | Sample 1 |
