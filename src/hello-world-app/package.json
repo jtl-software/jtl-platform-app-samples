@@ -1,0 +1,17 @@
+{
+  "name": "hello-world-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "turbo": "^2.5.5"
+  }
+}
