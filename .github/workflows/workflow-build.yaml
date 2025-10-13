@@ -4,8 +4,8 @@ on:
   workflow_call:
 
 jobs:
-  sample-1:
-    name: Sample 1
+  Hello-World-APP:
+    name: Hello World App
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
@@ -18,20 +18,13 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies
-        working-directory: src/sample-1
+        working-directory: src/hello-world-app
         run: yarn install
 
-      - name: Build Sample 1
-        working-directory: src/sample-1
+      - name: Build Hello World App
+        working-directory: src/hello-world-app
         run: yarn build
 
-      - name: Test Sample 1 and create coverage report
-        working-directory: src/sample-1
-        run: yarn coverage
-
-      - name: Report Sample 1 Coverage
-        uses: davelosert/vitest-coverage-report-action@v2
-        with:
-          name: Sample 1 Coverage Report
-          working-directory: src/sample-1
-          vite-config-path: vite.config.ts
+      - name: Test Hello World App
+        working-directory: src/hello-world-app
+        run: yarn test

@@ -1,20 +1,32 @@
-# ![JTL logo](https://avatars.githubusercontent.com/u/31404730?s=25&v=4) JTL-Platform Plugin Samples
+# ![JTL logo](https://avatars.githubusercontent.com/u/31404730?s=25&v=4) JTL-Platform App Samples
+
+Welcome to the official sample repository for **JTL-Cloud Apps**! This repository contains comprehensive examples and templates to help you build, test, and deploy applications on the JTL platform.
 
 ## ⚡️ Prerequisites
 
+- Node.js (v18 or higher)
+- Yarn package manager
 - Run `yarn install` on repository root to install husky with dependencies
 
 ## 🚀 Getting Started
 
-### Sample 1
+1. **Clone the repository:**
 
-- Run `yarn install` on `src/sample-1` to install dependencies
-- Run `yarn dev` to start the service
+   ```bash
+   git clone https://github.com/jtl-software/jtl-platform-app-samples.git
+   cd jtl-platform-app-samples
+   ```
 
-## 🔌 Ports
+2. **Navigate to your desired example:**
 
-To prevent conflicts with other services during development, we have a reserved port range for this project: `50190-50199`. Please use a port within this range when adding a new service.
+   ```bash
+   cd src/[example-name]
+   ```
 
-| Port  | Protocol | Service  |
-| ----- | -------- | -------- |
-| 50190 | HTTP     | Sample 1 |
+3. **Follow the README instructions** in each example directory for specific setup and run instructions.
+
+## 📁 Available Examples
+
+| Example         | Description                                      | Location               |
+| --------------- | ------------------------------------------------ | ---------------------- |
+| Hello World App | Full-stack application with backend and frontend | `src/hello-world-app/` |

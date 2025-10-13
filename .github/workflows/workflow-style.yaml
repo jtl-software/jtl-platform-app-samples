@@ -47,7 +47,7 @@ jobs:
       - name: Run prettier
         run: yarn format:check
 
-  eslint-sample-1:
+  eslint-hello-world-app:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
@@ -60,9 +60,9 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies
-        working-directory: src/sample-1
+        working-directory: src/hello-world-app
         run: yarn install
 
       - name: Run eslint
-        working-directory: src/sample-1
+        working-directory: src/hello-world-app
         run: yarn lint
