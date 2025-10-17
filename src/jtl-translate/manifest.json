@@ -1,0 +1,65 @@
+{
+  "manifestVersion": "1.0.0",
+  "version": "1.0.0",
+  "name": {
+    "short": "JTL Translate",
+    "full": "JTL Translate"
+  },
+  "description": {
+    "short": "Translate Your JTL Products With Ease",
+    "full": "Translate Your JTL Products With Ease "
+  },
+  "defaultLocale": "de-DE",
+  "locales": {
+    "de-DE": {
+      "key1": "abc"
+    },
+    "en": {
+      "key1": "abc"
+    }
+  },
+  "icon": {
+    "light": "https://katydid-tops-mosquito.ngrok-free.app/app-icon-light.png",
+    "dark": "https://katydid-tops-mosquito.ngrok-free.app/app-icon-dark.png"
+  },
+  "communication": {
+    "supportUrl": "https://katydid-tops-mosquito.ngrok-free.app/support?lang=__ACTIVE_LOCALE__/",
+    "guideUrl": "https://katydid-tops-mosquito.ngrok-free.app/guide?lang=__ACTIVE_LOCALE__"
+  },
+  "legal": {
+    "gdprRequestUrl": "https://katydid-tops-mosquito.ngrok-free.app/gdpr/request",
+    "gdprDeleteUrl": "https://katydid-tops-mosquito.ngrok-free.app/gdpr/delete",
+    "privacyUrl": "https://katydid-tops-mosquito.ngrok-free.app/privacy",
+    "termsOfUseUrl": "https://katydid-tops-mosquito.ngrok-free.app/terms-of-use"
+  },
+  "lifecycle": {
+    "setupUrl": "https://katydid-tops-mosquito.ngrok-free.app/jtl/setup",
+    "connectUrl": "https://katydid-tops-mosquito.ngrok-free.app/jtl/connect",
+    "disconnectUrl": "https://katydid-tops-mosquito.ngrok-free.app/jtl/disconnect"
+  },
+  "requirements": {
+    "minCloudApiVersion": "version12"
+  },
+  "capabilities": {
+    "hub": {
+      "appLauncher": {
+        "redirectUrl": "https://katydid-tops-mosquito.ngrok-free.app/jtl/translate"
+      }
+    },
+    "erp": {
+      "headless": {
+        "url": "https://katydid-tops-mosquito.ngrok-free.app/jtl/translate"
+      },
+      "menuItems": [
+        {
+          "id": "overview",
+          "name": "JTL Translate",
+          "url": "https://katydid-tops-mosquito.ngrok-free.app/jtl/translate"
+        }
+      ],
+      "api": {
+        "scopes": ["productRead", "productDelete"]
+      }
+    }
+  }
+}
