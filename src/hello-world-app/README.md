@@ -2,12 +2,14 @@
 
 ## ⚡️ Prerequisites
 
-- Build the `js-core` package in `src/sdk/js-core` with `yarn build`. This is the `@jtl-software/cloud-apps-core` package
-- Run `yarn install` on repository root to dependencies
+From the root directory, install the required dependencies:
+```bash
+cd src/hello-world-app
+yarn install
+```
 
 ## 🛠️ Development
-
-- Run `yarn dev` to start the monorepo
+Run `yarn dev` to start the monorepo
 
 ## 🔌 Ports
 
