@@ -41,6 +41,9 @@ generators
 # testing folder
 /test
 
+# Claude Code
+.claude/
+
 # Logs
 logs
 *.log
@@ -49,3 +52,5 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+
+src/hello-world-app/packages/backend/.env

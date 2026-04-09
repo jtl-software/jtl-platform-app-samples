@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "App",
+    "Projects": [
+      {
+        "Path": "hello-world-app-csharp\\HelloWorldApp.Api\\HelloWorldApp.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "hello-world-app\\packages\\frontend\\frontend.esproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

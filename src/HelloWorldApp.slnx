@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="hello-world-app-csharp\HelloWorldApp.Api\HelloWorldApp.Api.csproj" />
+  <Project Path="hello-world-app\packages\frontend\frontend.esproj" />
+</Solution>
