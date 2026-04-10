@@ -5,7 +5,7 @@ import { importJWK, jwtVerify } from 'jose';
 import { Environment } from './constants.js';
 dotenv.config();
 const app = express();
-const PORT = 50143;
+const PORT = 3005;
 
 app.use(cors());
 
