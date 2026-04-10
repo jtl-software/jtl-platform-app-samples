@@ -2,8 +2,8 @@
   "manifestVersion": "1.0.0",
   "version": "1.0.0",
   "name": {
-    "short": "Hello World",
-    "full": "The official Hello World app for Demo"
+    "short": "tobilen",
+    "full": "Tobilen App"
   },
   "description": {
     "short": "Lorem ipsum.",
@@ -33,15 +33,15 @@
     "termsOfUseUrl": "https://example.com/terms-of-use"
   },
   "lifecycle": {
-    "setupUrl": "http://localhost:50142/setup",
+    "setupUrl": "http://localhost:3004/setup",
     "connectUrl": "https://jtl.integrations.example.com/lifecycle/connect",
     "disconnectUrl": "https://jtl.integrations.example.com/lifecycle/disconnect"
   },
   "capabilities": {
     "hub": {
       "appLauncher": {
-        "redirectUrl": "http://localhost:50142/erp",
-        "closedPreviewUrl": "http://localhost:50142/closed-preview"
+        "redirectUrl": "http://localhost:3004/hub",
+        "closedPreviewUrl": "http://localhost:3004/closed-preview"
       }
     },
     "erp": {
@@ -52,12 +52,12 @@
         {
           "id": "<MENU ITEM ID>",
           "name": "ERP Menu Item",
-          "url": "http://localhost:50142/erp"
+          "url": "http://localhost:3004/erp"
         }
       ],
       "pane": [
         {
-          "url": "http://localhost:50142/pane",
+          "url": "http://localhost:3004/pane",
           "title": "Test Pane",
           "context": "customers",
           "matchChildContext": true

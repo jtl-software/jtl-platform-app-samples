@@ -5,7 +5,7 @@ import { importJWK, jwtVerify } from 'jose';
 import { Environment } from './constants.js';
 dotenv.config();
 const app = express();
-const PORT = 50143;
+const PORT = 3005;
 
 app.use(cors());
 
@@ -151,7 +151,7 @@ app.all('/erp-info/:tenantId/:endpoint', async (req: Request, res: Response) => 
     const options: RequestInit = {
       method: method,
       headers: {
-        'X-Tenant-ID': tenantId,
+        'X-Tenant-ID': tenantId as string,
         Authorization: `Bearer ${jwt}`,
         'Content-Type': 'application/json',
       },

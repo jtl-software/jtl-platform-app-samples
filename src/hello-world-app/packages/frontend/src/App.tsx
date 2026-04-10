@@ -1,31 +1,37 @@
 import { AppBridge } from '@jtl-software/cloud-apps-core';
 import './App.css';
-import { ErpPage, PanePage, SetupPage } from './pages';
+import { ErpPage, HubPage, PanePage, SetupPage, WelcomePage } from './pages';
 import { useEffect } from 'react';
 
-type AppMode = 'setup' | 'erp' | 'pane';
+type AppMode = 'setup' | 'erp' | 'pane' | 'hub';
 
-const App: React.FC<{ appBridge: AppBridge }> = ({ appBridge }) => {
+const App: React.FC<{ appBridge: AppBridge | null }> = ({ appBridge }) => {
   const mode: AppMode = location.pathname.substring(1) as AppMode;
 
   useEffect((): void => {
-    console.log('[HelloWorldApp] bridge created!');
-  }, []);
+    if (appBridge) {
+      console.log('[HelloWorldApp] bridge created!');
+    }
+  }, [appBridge]);
+
+  // Hub page runs standalone (no iframe, no AppBridge)
+  if (mode === 'hub') {
+    return <HubPage />;
+  }
+
+  if (!appBridge) {
+    return <WelcomePage />;
+  }
 
   switch (mode) {
     case 'setup':
-      return appBridge && <SetupPage appBridge={appBridge} />;
+      return <SetupPage appBridge={appBridge} />;
     case 'erp':
-      return appBridge && <ErpPage appBridge={appBridge} />;
+      return <ErpPage appBridge={appBridge} />;
     case 'pane':
-      return appBridge && <PanePage appBridge={appBridge} />;
+      return <PanePage appBridge={appBridge} />;
     default:
-      return (
-        <div>
-          <h1>Unknown mode</h1>
-          <p>Unknown mode</p>
-        </div>
-      );
+      return <WelcomePage connected />;
   }
 };
 
