@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>HelloWorldApp.Api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Ed25519 signature verification for JWKS token validation -->
+    <PackageReference Include="NSec.Cryptography" Version="25.4.0" />
+    <!-- FastEndpoints + Swagger -->
+    <PackageReference Include="FastEndpoints" Version="7.1.1" />
+    <PackageReference Include="FastEndpoints.Swagger" Version="7.1.1" />
+  </ItemGroup>
+
+</Project>

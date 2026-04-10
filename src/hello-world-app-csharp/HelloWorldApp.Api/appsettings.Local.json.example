@@ -1,0 +1,7 @@
+{
+  "JtlPlatform": {
+    "Environment": "prod",
+    "ClientId": "YOUR_CLIENT_ID",
+    "ClientSecret": "YOUR_CLIENT_SECRET"
+  }
+}
