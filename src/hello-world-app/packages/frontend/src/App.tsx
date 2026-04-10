@@ -1,9 +1,9 @@
 import { AppBridge } from '@jtl-software/cloud-apps-core';
 import './App.css';
-import { ErpPage, PanePage, SetupPage, WelcomePage } from './pages';
+import { ErpPage, HubPage, PanePage, SetupPage, WelcomePage } from './pages';
 import { useEffect } from 'react';
 
-type AppMode = 'setup' | 'erp' | 'pane';
+type AppMode = 'setup' | 'erp' | 'pane' | 'hub';
 
 const App: React.FC<{ appBridge: AppBridge | null }> = ({ appBridge }) => {
   const mode: AppMode = location.pathname.substring(1) as AppMode;
@@ -13,6 +13,11 @@ const App: React.FC<{ appBridge: AppBridge | null }> = ({ appBridge }) => {
       console.log('[HelloWorldApp] bridge created!');
     }
   }, [appBridge]);
+
+  // Hub page runs standalone (no iframe, no AppBridge)
+  if (mode === 'hub') {
+    return <HubPage />;
+  }
 
   if (!appBridge) {
     return <WelcomePage />;

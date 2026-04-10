@@ -2,8 +2,8 @@
   "manifestVersion": "1.0.0",
   "version": "1.0.0",
   "name": {
-    "short": "Hello World",
-    "full": "The official Hello World app for Demo"
+    "short": "tobilen",
+    "full": "Tobilen App"
   },
   "description": {
     "short": "Lorem ipsum.",
@@ -40,7 +40,7 @@
   "capabilities": {
     "hub": {
       "appLauncher": {
-        "redirectUrl": "http://localhost:3004/erp",
+        "redirectUrl": "http://localhost:3004/hub",
         "closedPreviewUrl": "http://localhost:3004/closed-preview"
       }
     },
