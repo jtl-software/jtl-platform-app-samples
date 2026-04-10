@@ -26,7 +26,7 @@ const App: React.FC<{ appBridge: AppBridge | null }> = ({ appBridge }) => {
     case 'pane':
       return <PanePage appBridge={appBridge} />;
     default:
-      return <WelcomePage />;
+      return <WelcomePage connected />;
   }
 };
 
