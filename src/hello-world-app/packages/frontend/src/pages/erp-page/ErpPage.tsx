@@ -13,12 +13,9 @@ import {
   Box,
   Button,
 } from '@jtl-software/platform-ui-react';
-import { Globe, Link as LinkIcon, MousePointerClick } from 'lucide-react';
+import { Globe, Link as LinkIcon } from 'lucide-react';
 
-const manifestMappings = [
-  { icon: LinkIcon, field: 'capabilities.erp.menuItems[].url', description: 'Sidebar menu entry' },
-  { icon: MousePointerClick, field: 'capabilities.hub.appLauncher.redirectUrl', description: 'Hub app card click' },
-];
+const manifestMappings = [{ icon: LinkIcon, field: 'capabilities.erp.menuItems[].url', description: 'Sidebar menu entry' }];
 
 const ErpPage: React.FC<IErpPageProps> = ({ appBridge }) => {
   const [isRequesting, setIsRequesting] = useState(false);
@@ -42,7 +39,7 @@ const ErpPage: React.FC<IErpPageProps> = ({ appBridge }) => {
           <Globe size={40} color="#1a56db" strokeWidth={1.5} />
           <CardTitle>ERP Integration</CardTitle>
           <CardDescription className="text-center">
-            This is the main app view. It loads when the user opens your app from the ERP menu or Hub.
+            This is the main app view. It loads when the user clicks your app's menu entry in the ERP sidebar.
           </CardDescription>
         </CardHeader>
         <CardContent>
