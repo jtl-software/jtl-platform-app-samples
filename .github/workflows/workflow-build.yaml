@@ -7,6 +7,9 @@ jobs:
   Hello-World-APP:
     name: Hello World App
     runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: src/hello-world-app
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -15,16 +18,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'yarn'
 
       - name: Install dependencies
-        working-directory: src/hello-world-app
-        run: yarn install
+        run: npm install
 
       - name: Build Hello World App
-        working-directory: src/hello-world-app
-        run: yarn build
+        run: npm run build
 
       - name: Test Hello World App
-        working-directory: src/hello-world-app
-        run: yarn test
+        run: npm run test

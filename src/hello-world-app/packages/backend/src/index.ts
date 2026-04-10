@@ -151,7 +151,7 @@ app.all('/erp-info/:tenantId/:endpoint', async (req: Request, res: Response) => 
     const options: RequestInit = {
       method: method,
       headers: {
-        'X-Tenant-ID': tenantId,
+        'X-Tenant-ID': tenantId as string,
         Authorization: `Bearer ${jwt}`,
         'Content-Type': 'application/json',
       },
