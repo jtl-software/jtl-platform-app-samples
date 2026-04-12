@@ -10,6 +10,12 @@ const require = createRequire(import.meta.url);
 export default defineConfig({
   server: {
     port: 3004,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3005',
+        changeOrigin: true,
+      },
+    },
   },
   plugins: [tailwindcss(), react()],
   resolve: {
