@@ -2,8 +2,8 @@
   "manifestVersion": "1.0.0",
   "version": "1.0.0",
   "name": {
-    "short": "tobilen",
-    "full": "Tobilen App"
+    "short": "Hello World",
+    "full": "The official Hello World app for Demo"
   },
   "description": {
     "short": "Lorem ipsum.",
