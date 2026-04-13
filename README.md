@@ -5,8 +5,7 @@ Welcome to the official sample repository for **JTL-Cloud Apps**! This repositor
 ## ⚡️ Prerequisites
 
 - Node.js (v18 or higher)
-- Yarn package manager
-- Run `yarn install` on repository root to install husky with dependencies
+- npm package manager
 
 ## 🚀 Getting Started
 
