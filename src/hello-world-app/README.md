@@ -6,12 +6,12 @@ From the root directory, install the required dependencies:
 
 ```bash
 cd src/hello-world-app
-yarn install
+npm install
 ```
 
 ## 🛠️ Development
 
-Run `yarn dev` to start the monorepo
+Run `npm run dev` to start the monorepo
 
 ## 🔌 Ports
 
