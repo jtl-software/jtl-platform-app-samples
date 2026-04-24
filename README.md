@@ -1,3 +1,5 @@
+# THIS REPO HAS BEEN SUPERSEDED BY THE JTL CLOUD APP CLI: https://www.npmjs.com/package/@jtl-software/create-cloud-app
+
 # ![JTL logo](https://avatars.githubusercontent.com/u/31404730?s=25&v=4) JTL-Platform App Samples
 
 Welcome to the official sample repository for **JTL-Cloud Apps**! This repository contains comprehensive examples and templates to help you build, test, and deploy applications on the JTL platform.
